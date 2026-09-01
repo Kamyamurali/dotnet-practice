@@ -1,0 +1,15 @@
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/bin/Debug/net10.0/fileio_demo
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/bin/Debug/net10.0/fileio_demo.deps.json
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/bin/Debug/net10.0/fileio_demo.runtimeconfig.json
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/bin/Debug/net10.0/fileio_demo.dll
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/bin/Debug/net10.0/fileio_demo.pdb
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/fileio_demo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/fileio_demo.AssemblyInfoInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/fileio_demo.AssemblyInfo.cs
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/fileio_demo.csproj.CoreCompileInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/fileio_demo.sourcelink.json
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/fileio_demo.dll
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/refint/fileio_demo.dll
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/fileio_demo.pdb
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/fileio_demo.genruntimeconfig.cache
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/fileio_demo/obj/Debug/net10.0/ref/fileio_demo.dll
