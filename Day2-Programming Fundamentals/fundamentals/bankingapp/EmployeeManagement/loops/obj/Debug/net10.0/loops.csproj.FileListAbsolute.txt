@@ -1,0 +1,15 @@
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/bin/Debug/net10.0/loops
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/bin/Debug/net10.0/loops.deps.json
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/bin/Debug/net10.0/loops.runtimeconfig.json
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/bin/Debug/net10.0/loops.dll
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/bin/Debug/net10.0/loops.pdb
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/loops.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/loops.AssemblyInfoInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/loops.AssemblyInfo.cs
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/loops.csproj.CoreCompileInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/loops.sourcelink.json
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/loops.dll
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/refint/loops.dll
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/loops.pdb
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/loops.genruntimeconfig.cache
+/Users/kamya/Desktop/dotnet-practice/Day2-Programming Fundamentals/fundamentals/bankingapp/EmployeeManagement/loops/obj/Debug/net10.0/ref/loops.dll

@@ -1,0 +1,6 @@
+@firstRESTAPIService_HostAddress = http://localhost:5001
+
+GET {{firstRESTAPIService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
