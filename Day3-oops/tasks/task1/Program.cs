@@ -19,10 +19,9 @@ class Program
             counter = 0;
         }
 
-        counter++;                                        // increment
-        File.WriteAllText(filePath, counter.ToString());  // store it back
+        counter++;                                        
+        File.WriteAllText(filePath, counter.ToString());  
 
-        // Display all numbers from 1 up to the current count: 1, 2, 3, ...
         for (int i = 1; i <= counter; i++)
         {
             Console.Write(i);
