@@ -1,0 +1,15 @@
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/bin/Debug/net10.0/OOPS_bankingAPP
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/bin/Debug/net10.0/OOPS_bankingAPP.deps.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/bin/Debug/net10.0/OOPS_bankingAPP.runtimeconfig.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/bin/Debug/net10.0/OOPS_bankingAPP.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/bin/Debug/net10.0/OOPS_bankingAPP.pdb
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/OOPS_bankingAPP.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/OOPS_bankingAPP.AssemblyInfoInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/OOPS_bankingAPP.AssemblyInfo.cs
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/OOPS_bankingAPP.csproj.CoreCompileInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/OOPS_bankingAPP.sourcelink.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/OOPS_bankingAPP.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/refint/OOPS_bankingAPP.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/OOPS_bankingAPP.pdb
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/OOPS_bankingAPP.genruntimeconfig.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/OOPS_bankingAPP/obj/Debug/net10.0/ref/OOPS_bankingAPP.dll
