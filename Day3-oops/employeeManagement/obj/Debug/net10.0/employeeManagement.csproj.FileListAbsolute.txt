@@ -1,0 +1,15 @@
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/bin/Debug/net10.0/employeeManagement
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/bin/Debug/net10.0/employeeManagement.deps.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/bin/Debug/net10.0/employeeManagement.runtimeconfig.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/bin/Debug/net10.0/employeeManagement.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/bin/Debug/net10.0/employeeManagement.pdb
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/employeeManagement.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/employeeManagement.AssemblyInfoInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/employeeManagement.AssemblyInfo.cs
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/employeeManagement.csproj.CoreCompileInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/employeeManagement.sourcelink.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/employeeManagement.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/refint/employeeManagement.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/employeeManagement.pdb
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/employeeManagement.genruntimeconfig.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/employeeManagement/obj/Debug/net10.0/ref/employeeManagement.dll
