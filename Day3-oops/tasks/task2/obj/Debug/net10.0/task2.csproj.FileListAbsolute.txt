@@ -1,0 +1,15 @@
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/bin/Debug/net10.0/task2
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/bin/Debug/net10.0/task2.deps.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/bin/Debug/net10.0/task2.runtimeconfig.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/bin/Debug/net10.0/task2.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/bin/Debug/net10.0/task2.pdb
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/task2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/task2.AssemblyInfoInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/task2.AssemblyInfo.cs
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/task2.csproj.CoreCompileInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/task2.sourcelink.json
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/task2.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/refint/task2.dll
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/task2.pdb
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/task2.genruntimeconfig.cache
+/Users/kamya/Desktop/dotnet-practice/Day3-oops/tasks/task2/obj/Debug/net10.0/ref/task2.dll

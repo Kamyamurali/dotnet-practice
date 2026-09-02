@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("firstRESTAPIService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+924388b54d22d0c20612429005080677648d7f36")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5920105698e8019b08e011d1ff1295bc57f8f36a")]
 [assembly: System.Reflection.AssemblyProductAttribute("firstRESTAPIService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("firstRESTAPIService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
