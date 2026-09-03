@@ -1,6 +1,5 @@
 ﻿using Banking;
 
-// Starts empty. Every account YOU open gets stored here.
 List<Accounts> accounts = new List<Accounts>();
 
 bool running = true;
@@ -15,7 +14,6 @@ while (running)
     Console.Write("Choose: ");
     int choice = Convert.ToInt32(Console.ReadLine());
 
-    // ----- OPEN A NEW ACCOUNT -----
     if (choice == 1)
     {
         Console.Write("Type  1. Savings  2. Checking  3. Loan : ");
@@ -65,12 +63,10 @@ while (running)
             Console.WriteLine("Unknown type.");
         }
     }
-    // ----- EXIT -----
     else if (choice == 0)
     {
         running = false;
     }
-    // ----- WITHDRAW / DEPOSIT / CHECK BALANCE -----
     else if (choice == 2 || choice == 3 || choice == 4)
     {
         if (accounts.Count == 0)
@@ -79,7 +75,6 @@ while (running)
             continue;
         }
 
-        // Show what you've opened, then pick one.
         Console.WriteLine("Your accounts:");
         for (int i = 0; i < accounts.Count; i++)
         {
@@ -95,8 +90,7 @@ while (running)
 
         Accounts acc = accounts[pick - 1];   // base-type reference
 
-        // Each action is wrapped in try/catch because the class methods
-        // throw an Exception when a rule is broken.
+    
         try
         {
             if (choice == 2)
