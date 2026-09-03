@@ -71,7 +71,7 @@ while (running)
         }
 
         accounts.Add(newAcc);
-        SaveAccount(newAcc);   
+        SaveAccount(newAcc);  
         Console.WriteLine($"{newAcc.AccountType} account created and saved to {newAcc.AccountNumber}.txt!");
     }
     else if (choice == 0)
@@ -86,7 +86,6 @@ while (running)
             continue;
         }
 
-        // show accounts, then pick one
         Console.WriteLine("Your accounts:");
         for (int i = 0; i < accounts.Count; i++)
         {
@@ -112,8 +111,8 @@ while (running)
             {
                 Console.Write("Amount to withdraw: ");
                 int amt = Convert.ToInt32(Console.ReadLine());
-                acc.Withdraw(amt);       // savings / checking / loan react differently
-                SaveAccount(acc);        // keep the file in sync
+                acc.Withdraw(amt);       
+                SaveAccount(acc);        
                 Console.WriteLine("New balance: " + acc.CheckBalance());
             }
             else
