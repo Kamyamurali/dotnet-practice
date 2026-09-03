@@ -1,0 +1,15 @@
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/bin/Debug/net10.0/OOPS_inheritanceAPP
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/bin/Debug/net10.0/OOPS_inheritanceAPP.deps.json
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/bin/Debug/net10.0/OOPS_inheritanceAPP.runtimeconfig.json
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/bin/Debug/net10.0/OOPS_inheritanceAPP.dll
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/bin/Debug/net10.0/OOPS_inheritanceAPP.pdb
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/OOPS_inheritanceAPP.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/OOPS_inheritanceAPP.AssemblyInfoInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/OOPS_inheritanceAPP.AssemblyInfo.cs
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/OOPS_inheritanceAPP.csproj.CoreCompileInputs.cache
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/OOPS_inheritanceAPP.sourcelink.json
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/OOPS_inheritanceAPP.dll
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/refint/OOPS_inheritanceAPP.dll
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/OOPS_inheritanceAPP.pdb
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/OOPS_inheritanceAPP.genruntimeconfig.cache
+/Users/kamya/Desktop/dotnet-practice/Day4-OOPS/OOPS_inheritanceAPP/obj/Debug/net10.0/ref/OOPS_inheritanceAPP.dll
