@@ -1,25 +1,36 @@
 ﻿using Banking;
 
-// Starts empty. Every account YOU open gets stored here.
 List<Accounts> accounts = new List<Accounts>();
 
 bool running = true;
 while (running)
 {
-    Console.WriteLine("\n====== BANK MENU ======");
-    Console.WriteLine("1. Open a new account");
-    Console.WriteLine("2. Withdraw");
-    Console.WriteLine("3. Deposit");
-    Console.WriteLine("4. Check balance");
+    Console.WriteLine("\n====== MAIN MENU ======");
+    Console.WriteLine("1. Create new account");
+    Console.WriteLine("2. Check balance");
+    Console.WriteLine("3. Withdraw");
+    Console.WriteLine("4. Deposit");
     Console.WriteLine("0. Exit");
     Console.Write("Choose: ");
     int choice = Convert.ToInt32(Console.ReadLine());
 
-    // ----- OPEN A NEW ACCOUNT -----
     if (choice == 1)
     {
-        Console.Write("Type  1. Savings  2. Checking  3. Loan : ");
+        Console.WriteLine("\n--- Account type ---");
+        Console.WriteLine("1. Savings");
+        Console.WriteLine("2. Checking");
+        Console.WriteLine("3. Loans");
+        Console.WriteLine("4. Back (to main menu)");
+        Console.Write("Choose: ");
         int type = Convert.ToInt32(Console.ReadLine());
+
+        if (type == 4) { continue; }         
+        if (type < 1 || type > 3)
+        {
+            Console.WriteLine("Unknown type.");
+            continue;
+        }
+
         Console.Write("Account number: ");
         int no = Convert.ToInt32(Console.ReadLine());
         Console.Write("Account holder name: ");
@@ -27,59 +38,55 @@ while (running)
         Console.Write("Starting balance: ");
         int bal = Convert.ToInt32(Console.ReadLine());
 
+        Accounts newAcc;
         if (type == 1)
         {
-            accounts.Add(new Savings()
+            newAcc = new Savings()
             {
                 AccountNumber = no, AccountHolderName = name,
                 AccountType = TypeOfAccount.Savings,
                 AccountBalance = bal, IsAccActive = true
-            });
-            Console.WriteLine("Savings account created!");
+            };
         }
         else if (type == 2)
         {
             Console.Write("Enable overdraft? (y/n): ");
             string od = Console.ReadLine();
-            accounts.Add(new Checking()
+            newAcc = new Checking()
             {
                 AccountNumber = no, AccountHolderName = name,
                 AccountType = TypeOfAccount.Checking,
                 AccountBalance = bal, IsAccActive = true,
                 isODEnabled = (od == "y" || od == "Y")
-            });
-            Console.WriteLine("Checking account created!");
+            };
         }
-        else if (type == 3)
+        else
         {
-            accounts.Add(new Loans()
+            newAcc = new Loans()
             {
                 AccountNumber = no, AccountHolderName = name,
                 AccountType = TypeOfAccount.Loans,
                 AccountBalance = bal, IsAccActive = true
-            });
-            Console.WriteLine("Loan account created!");
+            };
         }
-        else
-        {
-            Console.WriteLine("Unknown type.");
-        }
+
+        accounts.Add(newAcc);
+        SaveAccount(newAcc);   
+        Console.WriteLine($"{newAcc.AccountType} account created and saved to {newAcc.AccountNumber}.txt!");
     }
-    // ----- EXIT -----
     else if (choice == 0)
     {
         running = false;
     }
-    // ----- WITHDRAW / DEPOSIT / CHECK BALANCE -----
     else if (choice == 2 || choice == 3 || choice == 4)
     {
         if (accounts.Count == 0)
         {
-            Console.WriteLine("No accounts yet - open one first (option 1).");
+            Console.WriteLine("No accounts yet - create one first (option 1).");
             continue;
         }
 
-        // Show what you've opened, then pick one.
+        // show accounts, then pick one
         Console.WriteLine("Your accounts:");
         for (int i = 0; i < accounts.Count; i++)
         {
@@ -93,29 +100,29 @@ while (running)
             continue;
         }
 
-        Accounts acc = accounts[pick - 1];   // base-type reference
+        Accounts acc = accounts[pick - 1];   
 
-        // Each action is wrapped in try/catch because the class methods
-        // throw an Exception when a rule is broken.
         try
         {
             if (choice == 2)
             {
-                Console.Write("Amount to withdraw: ");
-                int amt = Convert.ToInt32(Console.ReadLine());
-                acc.Withdraw(amt);   // savings / checking / loan each react differently
-                Console.WriteLine("New balance: " + acc.CheckBalance());
+                Console.WriteLine("Available balance: " + acc.CheckBalance());
             }
             else if (choice == 3)
             {
-                Console.Write("Amount to deposit: ");
+                Console.Write("Amount to withdraw: ");
                 int amt = Convert.ToInt32(Console.ReadLine());
-                acc.Deposit(amt);
+                acc.Withdraw(amt);       // savings / checking / loan react differently
+                SaveAccount(acc);        // keep the file in sync
                 Console.WriteLine("New balance: " + acc.CheckBalance());
             }
             else
             {
-                Console.WriteLine("Available balance: " + acc.CheckBalance());
+                Console.Write("Amount to deposit: ");
+                int amt = Convert.ToInt32(Console.ReadLine());
+                acc.Deposit(amt);
+                SaveAccount(acc);
+                Console.WriteLine("New balance: " + acc.CheckBalance());
             }
         }
         catch (Exception es)
@@ -130,3 +137,20 @@ while (running)
 }
 
 Console.WriteLine("Goodbye!");
+
+void SaveAccount(Accounts a)
+{
+    List<string> lines = new List<string>();
+    lines.Add("Account Number: " + a.AccountNumber);
+    lines.Add("Account Holder: " + a.AccountHolderName);
+    lines.Add("Account Type: " + a.AccountType);
+    lines.Add("Balance: " + a.AccountBalance);
+    lines.Add("Active: " + a.IsAccActive);
+
+    if (a is Checking c)
+    {
+        lines.Add("OD Enabled: " + c.isODEnabled);
+    }
+
+    File.WriteAllLines(a.AccountNumber + ".txt", lines);
+}
