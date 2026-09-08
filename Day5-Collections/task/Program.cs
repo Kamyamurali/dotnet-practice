@@ -2,12 +2,11 @@
 {
     class Program
     {
-        // The list that holds all accounts. "static" so every method below can use it.
         static List<SavingsAccount> accounts = new List<SavingsAccount>();
 
         static void Main()
         {
-            SeedAccounts();   // fill the list with 15 accounts before the menu shows
+            SeedAccounts();   
 
             while (true)
             {
@@ -34,18 +33,16 @@
             }
         }
 
-        // ---------- helper: find one account by its number ----------
         static SavingsAccount FindAccount(int accNo)
         {
             foreach (SavingsAccount acc in accounts)
             {
                 if (acc.accNo == accNo)
-                    return acc;      // found it, hand it back
+                    return acc;      
             }
-            return null;             // walked the whole list, not found
+            return null;             
         }
 
-        // ---------- requirement 2: 15 hardcoded accounts ----------
         static void SeedAccounts()
         {
             accounts.Add(new SavingsAccount { accNo = 1001, accName = "Arjun Menon",     accBalance = 15000, accIsActive = true,  accBranch = "Chennai"   });
@@ -65,7 +62,6 @@
             accounts.Add(new SavingsAccount { accNo = 1015, accName = "Aravind Balaji",  accBalance = 55000, accIsActive = true,  accBranch = "Chennai"   });
         }
 
-        // ---------- option 1 ----------
         static void AddNewAccount()
         {
             Console.Write("Enter account number: ");
@@ -96,7 +92,6 @@
             Console.WriteLine("Account added successfully!");
         }
 
-        // ---------- option 2 ----------
         static void ViewAccountDetails()
         {
             Console.WriteLine();
@@ -115,7 +110,6 @@
             }
         }
 
-        // ---------- option 3 ----------
         static void Withdraw()
         {
             Console.Write("Enter account number: ");
@@ -137,7 +131,6 @@
             Console.WriteLine("Withdrawn. New balance: " + acc.accBalance);
         }
 
-        // ---------- option 4 ----------
         static void Deposit()
         {
             Console.Write("Enter account number: ");
@@ -153,7 +146,6 @@
             Console.WriteLine("Deposited. New balance: " + acc.accBalance);
         }
 
-        // ---------- option 5 ----------
         static void Transfer()
         {
             Console.Write("Transfer FROM account number: ");
@@ -183,7 +175,6 @@
             Console.WriteLine(toAcc.accName + " new balance: " + toAcc.accBalance);
         }
 
-        // ---------- option 6 (with its own a-e submenu) ----------
         static void Summary()
         {
             while (true)
@@ -227,7 +218,7 @@
                 }
                 else if (choice == "e")
                 {
-                    break;   // leave the summary, go back to main menu
+                    break;   
                 }
                 else
                 {
