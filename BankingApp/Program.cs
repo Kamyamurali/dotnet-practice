@@ -14,7 +14,7 @@ catch (Exception ex)
 {
     Console.WriteLine("Could not connect to the database. Is Docker running?");
     Console.WriteLine("Details: " + ex.Message);
-    return;   // stop the app cleanly instead of crashing
+    return;   
 }
 
 const string BankRoutingNumber = "021000021";
@@ -28,7 +28,7 @@ while (running)
     Console.WriteLine("3. Exit");
 
     string? choice = ReadLineOrEsc("Enter your choice: ");
-    if (choice == null) { running = false; break; }   // Esc = exit the app
+    if (choice == null) { running = false; break; }   
 
     switch (choice)
     {

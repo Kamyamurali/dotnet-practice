@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JWT Demo Client</title>
+<style>
+  :root { --ink:#1d2433; --paper:#f5f6fa; --line:#d6dbe6; --h:#c2185b; --p:#6a1b9a; --s:#0277bd; --ok:#2e7d32; --bad:#c62828; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--paper); color:var(--ink); }
+  main { max-width:1180px; margin:0 auto; padding:24px; display:grid; grid-template-columns: 360px 1fr; gap:24px; }
+  h1 { grid-column:1/-1; margin:0; font-size:1.6rem; }
+  h2 { font-size:1rem; margin:18px 0 8px; }
+  section { background:#fff; border:1px solid var(--line); border-radius:8px; padding:16px 20px; }
+  label { display:block; font-size:.85rem; margin-top:8px; }
+  input, select { width:100%; padding:8px; border:1px solid var(--line); border-radius:4px; font-size:.95rem; }
+  button { margin:6px 6px 0 0; padding:8px 12px; border:1px solid var(--ink); background:#fff; border-radius:4px; cursor:pointer; font-size:.85rem; }
+  button.primary { background:var(--ink); color:#fff; }
+  .hint { font-size:.8rem; color:#5a6272; margin:6px 0 0; }
+  #token { font-family: ui-monospace, Menlo, monospace; font-size:.78rem; word-break:break-all; line-height:1.5; padding:10px; background:var(--paper); border-radius:4px; min-height:48px; max-height:180px; overflow:auto; }
+  .c0 { color:var(--h); } .c1 { color:var(--p); } .c2 { color:var(--s); } .c3 { color:#ef6c00; } .c4 { color:var(--ok); }
+  .parts { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  pre { margin:0; font-size:.8rem; background:var(--paper); padding:10px; border-radius:4px; overflow-x:auto; border-left:4px solid var(--line); white-space:pre-wrap; }
+  #hdr { border-left-color:var(--h); } #pl { border-left-color:var(--p); }
+  #out { border-left-color:var(--ink); min-height:120px; }
+  #where { font-size:.85rem; background:var(--paper); padding:8px 10px; border-radius:4px; }
+  .status { font-weight:600; } .ok { color:var(--ok); } .bad { color:var(--bad); }
+  @media (max-width:860px){ main { grid-template-columns:1fr; } .parts { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>JWT demo client (ASP.NET Core Web API)</h1>
+
+  <section>
+    <h2>1. Log in</h2>
+    <label for="u">Username</label><input id="u" value="guest">
+    <label for="p">Password</label><input id="p" type="password" value="guest123">
+    <p class="hint">kamya / admin123 = Admin &nbsp;|&nbsp; guest / guest123 = User</p>
+
+    <label for="type">Token type (server side)</label>
+    <select id="type">
+      <option value="hs256">HS256 - signed, symmetric key (JwtSecurityTokenHandler)</option>
+      <option value="rs256">RS256 - signed, RSA private/public key (JsonWebTokenHandler)</option>
+      <option value="jwe">Encrypted JWE - RSA-OAEP + A256CBC-HS512</option>
+    </select>
+
+    <label for="store">Store token in (client side)</label>
+    <select id="store">
+      <option value="session">sessionStorage</option>
+      <option value="local">localStorage</option>
+      <option value="cookie">HttpOnly cookie (set by server)</option>
+    </select>
+    <button class="primary" onclick="login()">Log in</button>
+
+    <h2>2. Call the API</h2>
+    <button onclick="call('public')">Public</button>
+    <button onclick="call('profile')">Profile [Authorize]</button>
+    <button onclick="call('admin')">Admin [Roles=Admin]</button>
+
+    <h2>3. Test security</h2>
+    <button onclick="tamper()">Tamper: make me Admin</button>
+    <button onclick="publicKey()">Show RS256 public key</button>
+    <button onclick="logout()">Log out</button>
+
+    <h2>Where is the token?</h2>
+    <div id="where">Not logged in.</div>
+  </section>
+
+  <section>
+    <h2>Token <span id="tinfo" class="hint"></span></h2>
+    <div id="token">No token readable by JavaScript.</div>
+    <div class="parts">
+      <div><h2 class="c0">Header</h2><pre id="hdr">-</pre></div>
+      <div><h2 class="c1">Payload</h2><pre id="pl">-</pre></div>
+    </div>
+    <h2>API response <span id="status" class="status"></span></h2>
+    <pre id="out">-</pre>
+  </section>
+</main>
+
+<script>
+const KEY = "jwt";
+const $ = id => document.getElementById(id);
+
+const b64urlDecode = s => atob(s.replace(/-/g, "+").replace(/_/g, "/"));
+const b64urlEncode = s => btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+
+function getToken() {
+  return sessionStorage.getItem(KEY) || localStorage.getItem(KEY);
+}
+
+function render() {
+  const t = getToken();
+  if (!t) {
+    $("token").textContent = "No token readable by JavaScript.";
+    $("hdr").textContent = $("pl").textContent = "-";
+    $("tinfo").textContent = "";
+    return;
+  }
+  const parts = t.split(".");
+  $("token").innerHTML = parts.map((p, i) => `<span class="c${i}">${p}</span>`).join(".");
+  $("hdr").textContent = JSON.stringify(JSON.parse(b64urlDecode(parts[0])), null, 2);
+
+  if (parts.length === 5) {
+    $("tinfo").textContent = "(5 parts: header . encrypted key . IV . ciphertext . auth tag)";
+    $("pl").textContent = "ENCRYPTED - the payload cannot be read without the server's private key.\nOnly the header is readable.";
+  } else {
+    $("tinfo").textContent = "(3 parts: header . payload . signature)";
+    const payload = JSON.parse(b64urlDecode(parts[1]));
+    if (payload.exp) payload["exp (readable)"] = new Date(payload.exp * 1000).toLocaleString();
+    $("pl").textContent = JSON.stringify(payload, null, 2) + "\n\nSigned, NOT encrypted: anyone can read this.";
+  }
+}
+
+function show(res, body) {
+  $("status").textContent = res.status + " " + (res.statusText || "");
+  $("status").className = "status " + (res.ok ? "ok" : "bad");
+  $("out").textContent = body || "(empty body)";
+}
+
+async function login() {
+  sessionStorage.removeItem(KEY); localStorage.removeItem(KEY);
+  await fetch("/api/auth/logout", { method: "POST" });
+
+  const type = $("type").value, store = $("store").value;
+  const res = await fetch(`/api/auth/login?type=${type}&useCookie=${store === "cookie"}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username: $("u").value, password: $("p").value })
+  });
+  const data = await res.json().catch(() => ({}));
+
+  if (res.ok && data.token) {
+    (store === "local" ? localStorage : sessionStorage).setItem(KEY, data.token);
+    $("where").textContent = store === "local"
+      ? "localStorage (DevTools > Application > Local Storage). JS can read it; survives closing the browser."
+      : "sessionStorage (DevTools > Application > Session Storage). JS can read it; cleared when the tab closes.";
+  } else if (res.ok) {
+    $("where").textContent = `HttpOnly cookie "access_token" (DevTools > Application > Cookies). JS cannot read it: document.cookie = "${document.cookie}"`;
+  }
+  render();
+  show(res, JSON.stringify(data, null, 2));
+}
+
+async function call(endpoint) {
+  const t = getToken();
+  const headers = t ? { Authorization: "Bearer " + t } : {};  // cookie is sent automatically (same origin)
+  const res = await fetch(`/api/data/${endpoint}`, { headers });
+  const text = await res.text();
+  let body = text;
+  try { body = JSON.stringify(JSON.parse(text), null, 2); } catch {}
+  if (res.status === 401) body = (body ? body + "\n" : "") + "401 Unauthorized: token missing, expired, tampered or invalid.";
+  if (res.status === 403) body = (body ? body + "\n" : "") + "403 Forbidden: token is valid, but your role is not allowed here.";
+  show(res, body);
+}
+
+function tamper() {
+  const t = getToken();
+  if (!t) { $("out").textContent = "Log in with sessionStorage or localStorage first."; $("status").textContent = ""; return; }
+  const parts = t.split(".");
+  if (parts.length === 5) { $("out").textContent = "This token is encrypted - you can't even read the payload to change it."; $("status").textContent = ""; return; }
+  const payload = JSON.parse(b64urlDecode(parts[1]));
+  payload.role = "Admin";
+  const forged = `${parts[0]}.${b64urlEncode(JSON.stringify(payload))}.${parts[2]}`;
+  (sessionStorage.getItem(KEY) ? sessionStorage : localStorage).setItem(KEY, forged);
+  render();
+  $("status").textContent = "";
+  $("out").textContent = "Payload changed to role = Admin, but the signature was NOT recomputed (we don't have the key).\nClick Admin or Profile: the server rejects it with 401.";
+}
+
+async function publicKey() {
+  const res = await fetch("/api/auth/public-key");
+  show(res, JSON.stringify(await res.json(), null, 2) +
+    "\n\nThis public key can VERIFY RS256 tokens but cannot CREATE them. Only the server holds the private key.");
+}
+
+async function logout() {
+  sessionStorage.removeItem(KEY); localStorage.removeItem(KEY);
+  const res = await fetch("/api/auth/logout", { method: "POST" });
+  render();
+  $("where").textContent = "Not logged in.";
+  show(res, await res.text());
+}
+
+render();
+if (getToken()) $("where").textContent = localStorage.getItem(KEY) ? "localStorage (survived a refresh/restart of the tab)." : "sessionStorage (survived a page refresh).";
+</script>
+</body>
+</html>
