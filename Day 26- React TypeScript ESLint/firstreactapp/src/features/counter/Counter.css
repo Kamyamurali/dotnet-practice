@@ -1,0 +1,119 @@
+.card {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 40px 32px 32px;
+  border-radius: 24px;
+  background: rgba(20, 26, 58, 0.75);
+  border: 1px solid rgba(139, 120, 255, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5ee4c8;
+}
+
+.title {
+  margin-top: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.value {
+  margin: 28px 0;
+  font-size: 5.5rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.2s ease;
+}
+.value.zero     { color: #e8eaf6; }
+.value.positive { color: #8b78ff; }
+.value.negative { color: #ff7a90; }
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.secondary {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  color: #fff;
+  transition: transform 0.1s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover  { transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(0.96); }
+.btn:focus-visible { outline: 2px solid #5ee4c8; outline-offset: 3px; }
+
+.round {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  background: #232a55;
+  border: 1px solid #353e78;
+}
+.round:hover { background: #2c3468; }
+
+.round.primary {
+  background: linear-gradient(135deg, #8b78ff, #6a55f0);
+  border: none;
+  box-shadow: 0 8px 24px rgba(139, 120, 255, 0.4);
+}
+
+.pill {
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+.pill.accent {
+  background: rgba(94, 228, 200, 0.15);
+  color: #5ee4c8;
+  border: 1px solid rgba(94, 228, 200, 0.4);
+}
+.pill.accent:hover { background: rgba(94, 228, 200, 0.25); }
+
+.pill.ghost {
+  background: transparent;
+  color: #a9afd6;
+  border: 1px solid #353e78;
+}
+.pill.ghost:hover { color: #fff; border-color: #6a74b8; }
+
+.state {
+  margin-top: 32px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #0b1026;
+  border: 1px solid #232a55;
+  text-align: left;
+}
+.state-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6a74b8;
+}
+.state pre {
+  margin-top: 6px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.85rem;
+  color: #5ee4c8;
+}
