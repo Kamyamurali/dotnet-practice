@@ -1,0 +1,19 @@
+{
+  "name": "banking-node-gateway",
+  "version": "1.0.0",
+  "description": "Node.js middleware layer: routes React requests to the ASP.NET Core Web API and logs them",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.3.0",
+    "http-proxy-middleware": "^3.0.7"
+  }
+}

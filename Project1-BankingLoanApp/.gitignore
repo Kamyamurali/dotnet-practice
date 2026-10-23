@@ -1,0 +1,19 @@
+# .NET
+bin/
+obj/
+publish/
+*.user
+
+# Node / React
+node_modules/
+dist/
+.env
+!.env.example
+!.env.development
+!.env.production
+
+# OS / editors
+.DS_Store
+.vs/
+.vscode/
+*.zip
